@@ -1,4 +1,7 @@
+# Lab: One Ticket, Two JSON Designs
+# 1. Referenced Design
 
+```json
 {
   "users": [
     {
@@ -40,8 +43,10 @@
     }
   ]
 }
+```
 
-
+## 2. Embedded / Hybrid Design
+```json
 {
   "ticket_id": 1003,
   "subject": "Low water pressure",
@@ -72,3 +77,10 @@
     }
   ]
 }
+```
+## 3. Tradeoff Explanation
+
+
+The application opens ticket 1003 and shows its requester and events. Those facts in each design such has the requester's name and ticket's events are found using their IDs. In this design eveything is stored in a orgazied ticket so that it is much easier to find and can display eveything together and organized. If the requester changes their display name and the ticket accumulates years of events, the referenced design only needs to update the user's information. In the embedded design, multiple tickets may need to be updated, so it can grow too large.
+
+
